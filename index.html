@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">DevBlog AI.</div>
+        <div class="nav-links">
+            <a href="index.html">refresh</a>
+            
+            <a href="stories.html">Stories</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Share ideas with the Universe.</h1>
+        <p>Powered by Firebase & OpenAI.</p>
+        <button class="btn-primary" id="openModalBtn">+ Create Cloud Post</button>
+    </section>
+
+    <main class="container" id="blogGrid">
+        <p style="text-align:center; width:100%; color:gray;">Connecting to database...</p>
+    </main>
+
+    <div class="modal-overlay" id="postModal">
+        <div class="modal">
+            <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem;">
+                <h2>New Post</h2>
+                <button id="closeModalBtn" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <form id="postForm">
+                
+                <div class="ai-row">
+                    <label style="font-weight:500; font-size:0.9rem;">Title</label>
+                    <button type="button" class="btn-ai" id="aiBtn">
+                        ✨ AI Suggest Title(Demo)
+                    </button>
+                </div>
+                <input type="text" id="title" class="form-control" placeholder="Enter title or use AI..." required>
+
+                <label style="font-weight:500; font-size:0.9rem; margin-bottom:0.5rem; display:block;">Category</label>
+                <select id="category" class="form-control">
+                    <option>Technology</option>
+                    <option>Design</option>
+                    <option>Lifestyle</option>
+                </select>
+
+                <label style="font-weight:500; font-size:0.9rem; margin-bottom:0.5rem; display:block;">Content</label>
+                <textarea id="content" class="form-control" style="min-height:120px" placeholder="Write content first to use AI..." required></textarea>
+                
+                <button type="submit" class="btn-submit">Publish to Cloud</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
